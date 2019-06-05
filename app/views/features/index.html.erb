@@ -5,11 +5,16 @@
   <thead>
     <tr>
       <th>Title</th>
-<!--  <th>Total New Sales Score</th> -->
-      <th>Avg New Sales Score</th>
-<!--  <th>Total Existing Customer Score</th> -->
-      <th>Avg Existing Customer Score</th>
-      <th>Avg Strategy Score</th>
+        <% if user_signed_in?%>
+    <!--  <th>Total New Sales Score</th> -->
+          <th>Avg New Sales Score</th>
+    <!--  <th>Total Existing Customer Score</th> -->
+          <th>Avg Existing Customer Score</th>
+          <th>Avg Strategy Score</th>
+        <% else %>
+          <th>Description</th>
+          <th>Benefit</th>
+        <% end %>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,16 +23,21 @@
     <% @features.each do |feature| %>
       <tr>
         <td><%= feature.title %></td>
-<!--    <td><%= feature.sum_of_new_sales %></td> -->
-        <td><%= feature.avg_of_new_sales %></td>
-<!--    <td><%= feature.sum_of_existing_sales %></td> -->
-        <td><%= feature.avg_of_existing_sales %></td>
-        <td><%= feature.avg_of_strategy %></td>
+
+          <% if user_signed_in? %>
+    <!--    <td><%= feature.sum_of_new_sales %></td> -->
+            <td><%= feature.avg_of_new_sales %></td>
+    <!--    <td><%= feature.sum_of_existing_sales %></td> -->
+            <td><%= feature.avg_of_existing_sales %></td>
+            <td><%= feature.avg_of_strategy %></td>
+            <td><%= link_to 'Edit', edit_feature_path(feature) %></td>
+            <td><%= link_to 'Destroy', feature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% else %>
+            <td><%= truncate(feature.description) %></td>
+            <td><%= truncate(feature.benefit)%></td>
+          <% end %>
+
         <td><%= link_to 'Review', feature %></td>
-            <% if user_signed_in? %>
-                <td><%= link_to 'Edit', edit_feature_path(feature) %></td>
-                <td><%= link_to 'Destroy', feature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %>
       </tr>
     <% end %>
   </tbody>
