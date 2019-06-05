@@ -10,6 +10,8 @@ class FeaturesController < ApplicationController
   # GET /features/1
   # GET /features/1.json
   def show
+      @priority = Priority.new
+      @priority.feature = @feature
   end
 
   # GET /features/new

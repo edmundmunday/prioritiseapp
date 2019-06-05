@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h4>
   <strong>Title:</strong>
   <%= @feature.title %>
-</p>
+</h4>
 
 <p>
   <strong>Description:</strong>
@@ -14,6 +14,15 @@
   <strong>Benefit:</strong>
   <%= @feature.benefit %>
 </p>
+<hr width="100%">
+
+
+<div class="row">
+    <div class="section, col 6">
+        <h4>Provide Feedback</h4>
+        <%= render 'priority_form', priority: @priority %>
+    </div>
+</div>
 
 <% if user_signed_in? %>
     <%= link_to 'Edit', edit_feature_path(@feature) %> |

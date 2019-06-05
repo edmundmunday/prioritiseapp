@@ -1,0 +1,39 @@
+<%= form_with(model: priority, local: true) do |form| %>
+  <% if priority.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(priority.errors.count, "error") %> prohibited this priority from being saved:</h2>
+
+      <ul>
+      <% priority.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= form.hidden_field :feature_id %>
+
+  <div class="field">
+    <%= form.label :your_name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :new_customers_score %>
+    <%= form.number_field :new_sales %>
+  </div>
+
+  <div class="field">
+    <%= form.label :existing_customers_score %>
+    <%= form.number_field :existing_customers %>
+  </div>
+
+  <div class="field">
+    <%= form.label :strategic_score %>
+    <%= form.number_field :strategic %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
