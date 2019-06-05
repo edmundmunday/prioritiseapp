@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  feature_id: 1
+  name: MyString
+  new_sales: 1
+  existing_customers: 1
+  strategic: 1
+
+two:
+  feature_id: 1
+  name: MyString
+  new_sales: 1
+  existing_customers: 1
+  strategic: 1

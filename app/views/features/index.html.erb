@@ -19,8 +19,10 @@
         <td><%= feature.description %></td>
         <td><%= feature.benefit %></td>
         <td><%= link_to 'Show', feature %></td>
-        <td><%= link_to 'Edit', edit_feature_path(feature) %></td>
-        <td><%= link_to 'Destroy', feature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% if user_signed_in? %>
+                <td><%= link_to 'Edit', edit_feature_path(feature) %></td>
+                <td><%= link_to 'Destroy', feature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,6 @@
 
 <br>
 
-<%= image_tag("new.png", size: "16x16", alt: "new feature") %> <%= link_to 'New Feature', new_feature_path %>
+<% if user_signed_in? %>
+    <%= image_tag("new.png", size: "16x16", alt: "new feature") %> <%= link_to 'New Feature', new_feature_path %>
+<% end %>
