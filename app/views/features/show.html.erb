@@ -1,25 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h4>
-  <strong>Title:</strong>
-  <%= @feature.title %>
-</h4>
+<div class="row">
+    <h4>
+      <strong>Title:</strong>
+      <%= @feature.title %>
+    </h4>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @feature.description %>
-</p>
+<div class="row">
+    <p>
+      <strong>Description:</strong>
+      <%= @feature.description %>
+    </p>
+</div>
 
-<p>
-  <strong>Benefit:</strong>
-  <%= @feature.benefit %>
-</p>
+<div class="row">
+    <p>
+      <strong>Benefit:</strong>
+      <%= @feature.benefit %>
+    </p>
+</div> 
+
 <hr width="100%">
 
 
 <div class="row">
     <div class="section, col 6">
-        <h4>Provide Feedback</h4>
+        <h4>Provide Your Feedback</h4>
         <%= render 'priority_form', priority: @priority %>
     </div>
 </div>

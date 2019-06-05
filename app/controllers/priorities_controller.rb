@@ -28,7 +28,7 @@ class PrioritiesController < ApplicationController
 
     respond_to do |format|
       if @priority.save
-        format.html { redirect_to @priority, notice: 'Priority was successfully created.' }
+        format.html { redirect_to :features, notice: 'Feedback was successfully lodged.' }
         format.json { render :show, status: :created, location: @priority }
       else
         format.html { render :new }
