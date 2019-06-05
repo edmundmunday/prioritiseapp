@@ -30,14 +30,14 @@
     <!--    <td><%= feature.sum_of_existing_sales %></td> -->
             <td><%= feature.avg_of_existing_sales %></td>
             <td><%= feature.avg_of_strategy %></td>
-            <td><%= link_to 'Edit', edit_feature_path(feature) %></td>
-            <td><%= link_to 'Destroy', feature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_feature_path(feature), class: "btn waves-effect waves-light" %></td>
+            <td><%= link_to 'Destroy', feature, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn waves-effect waves-light red" %></td>
           <% else %>
             <td><%= truncate(feature.description) %></td>
             <td><%= truncate(feature.benefit)%></td>
           <% end %>
 
-        <td><%= link_to 'Review', feature %></td>
+        <td><%= link_to 'Review', feature, class: "btn waves-effect waves-light" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,5 +46,5 @@
 <br>
 
 <% if user_signed_in? %>
-    <%= image_tag("new.png", size: "16x16", alt: "new feature") %> <%= link_to 'New Feature', new_feature_path %>
+  <%= link_to 'New Feature', new_feature_path, class: "btn waves-effect waves-light" %>
 <% end %>

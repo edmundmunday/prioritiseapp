@@ -22,9 +22,9 @@
         <td><%= priority.new_sales %></td>
         <td><%= priority.existing_customers %></td>
         <td><%= priority.strategic %></td>
-        <td><%= link_to 'Show', priority %></td>
-        <td><%= link_to 'Edit', edit_priority_path(priority) %></td>
-        <td><%= link_to 'Destroy', priority, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', priority, class: "btn waves-effect waves-light" %></td>
+        <td><%= link_to 'Edit', edit_priority_path(priority), class: "btn waves-effect waves-light" %></td>
+        <td><%= link_to 'Destroy', priority, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn waves-effect waves-light" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Priority', new_priority_path %>
+<%= link_to 'New Priority', new_priority_path, class: "btn waves-effect waves-light" %>
