@@ -1,7 +1,7 @@
 <%= form_with(model: priority, local: true) do |form| %>
   <% if priority.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(priority.errors.count, "error") %> prohibited this priority from being saved:</h2>
+      <h4><%= pluralize(priority.errors.count, "error") %> prohibited this feedback from being saved:</h4>
 
       <ul>
       <% priority.errors.full_messages.each do |message| %>
@@ -11,28 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :feature_id %>
-    <%= form.number_field :feature_id %>
-  </div>
+    <%= form.hidden_field :feature_id %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :your_name %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :new_sales %>
+    <%= form.label :new_customer_score %>
     <%= form.number_field :new_sales %>
   </div>
 
   <div class="field">
-    <%= form.label :existing_customers %>
+    <%= form.label :existing_customers_score %>
     <%= form.number_field :existing_customers %>
   </div>
 
   <div class="field">
-    <%= form.label :strategic %>
+    <%= form.label :strategic_score %>
     <%= form.number_field :strategic %>
   </div>
 

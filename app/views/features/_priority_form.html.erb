@@ -15,22 +15,22 @@
 
   <div class="field">
     <%= form.label :your_name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :new_customers_score %>
-    <%= form.number_field :new_sales %>
+    <%= form.number_field :new_sales, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :existing_customers_score %>
-    <%= form.number_field :existing_customers %>
+    <%= form.number_field :existing_customers, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :strategic_score %>
-    <%= form.number_field :strategic %>
+    <%= form.number_field :strategic, required: true %>
   </div>
 
   <div class="actions">
