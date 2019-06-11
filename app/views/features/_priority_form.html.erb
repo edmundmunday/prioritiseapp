@@ -19,21 +19,21 @@
   </div>
 
   <div class="field">
-    <%= form.label :new_customers_score %>
-    <%= form.number_field :new_sales, required: true %>
+    <%= form.label :enhancing_existing_functionality %>
+    <%= form.number_field :new_sales, required: true, type: 'number', min: 1, max: 10 %>
   </div>
 
   <div class="field">
-    <%= form.label :existing_customers_score %>
-    <%= form.number_field :existing_customers, required: true %>
+    <%= form.label :providing_new_functionality %>
+    <%= form.number_field :existing_customers, required: true, type: 'number', min: 1, max: 10 %>
   </div>
 
   <div class="field">
-    <%= form.label :strategic_score %>
-    <%= form.number_field :strategic, required: true %>
+    <%= form.label :impacting_a_wide_customer_base %>
+    <%= form.number_field :strategic, required: true, type: 'number', min: 1, max: 10 %>
   </div>
 
   <div class="actions">
-    <%= form.submit("Submit Feedback", class: "btn waves-effect waves-light") %>
+    <%= form.submit("Cast Your Vote", class: "btn waves-effect waves-light") %>
   </div>
 <% end %>

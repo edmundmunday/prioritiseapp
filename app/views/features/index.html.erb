@@ -37,7 +37,11 @@
             <td><%= truncate(feature.benefit)%></td>
           <% end %>
 
-        <td><%= link_to 'Review', feature, class: "btn waves-effect waves-light" %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Review Responses', feature, class: "btn waves-effect waves-light" %></td>
+        <% else %>
+          <td><%= link_to 'Review & Vote', feature, class: "btn waves-effect waves-light" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -45,6 +49,4 @@
 
 <br>
 
-<% if user_signed_in? %>
-  <%= link_to 'New Feature', new_feature_path, class: "btn waves-effect waves-light" %>
-<% end %>
+  <%= link_to 'Suggest New Feature', new_feature_path, class: "btn waves-effect waves-light" %>

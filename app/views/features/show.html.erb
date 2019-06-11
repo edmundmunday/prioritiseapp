@@ -30,8 +30,9 @@
 <% if !user_signed_in? %>
     <div class="row">
         <div class="section, col 6">
-            <h4>Provide Your Feedback</h4>
-            <p>All scores must be out of 10</p>
+            <h4>Vote for this feature</h4>
+            <p>Give this feature scores from 1 - 10 on the following metrics to vote for it.</p>
+            <p>Features will be marked both on the number of votes AND the average score for each metric.</p>
             <%= render 'priority_form', priority: @priority %>
         </div>
     </div>
